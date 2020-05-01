@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="icon" href= "{{ url_for('static',filename='images/favicon.ico') }}" type="image/x-icon"/>
+
+</head>
+<body>
+    <div class="header">
+        <h1 class="text-header">To do list</h1>
+        <h1 class="text-header">{{ fecha }}</h1>
+    </div>
+
+    <div class="content">
+    {% for element in elements %}
+        <div class="div-item">
+            <input type="checkbox">
+            <p class="text p">{{ element }}</p>
+
+        </div>
+    {% endfor %}
+    </div>
+
+    <div class="form">
+        <form class='form-content' method="POST">
+            <input class="input" type="text" name="name" placeholder="Add new item" autocomplete="off">
+            <div class="button-conteiner">
+                <button class="boton" type="submit">Add</button>
+                <input class="boton" type="submit" value="Delete" name="Delete"/>
+            </div>
+         </form>
+    </div>
+
+    <div class="footer">
+        <p class="footer-text">2020 Javier Fernandez</p>
+    </div>
+
+</body>
+</html>
